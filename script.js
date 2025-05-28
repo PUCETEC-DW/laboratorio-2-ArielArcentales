@@ -4,17 +4,17 @@ fetch("https://restcountries.com/v3.1/all")
   .then(response => response.json())
   .then(data => {
     paises = data;
-    mostrarPaises(paises); 
+    mostrarPaises(paises);
   });
-
-  let campoBuscar = document.getElementById("buscar");
+ 
+let campoBuscar = document.getElementById("buscar");
 let contenedorResultado = document.getElementById("resultado");
 
 campoBuscar.addEventListener("input", () => {
   let texto = campoBuscar.value.toLowerCase();
   contenedorResultado.innerHTML = "";
 
-  let filtrados = paises.filter(p => 
+  let filtrados = paises.filter(p =>
     p.name.official.toLowerCase().includes(texto)
   );
 
